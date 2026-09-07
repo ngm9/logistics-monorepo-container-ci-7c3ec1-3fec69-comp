@@ -1,0 +1,17 @@
+services:
+  shipment-intake:
+    image: logistics-shipment-intake:${SHIPMENT_INTAKE_TAG:-latest}
+    ports:
+      - "127.0.0.1:8101:8000"
+  carrier-sync:
+    image: logistics-carrier-sync:${CARRIER_SYNC_TAG:-latest}
+    ports:
+      - "127.0.0.1:8102:8000"
+  label-generation:
+    image: logistics-label-generation:${LABEL_GENERATION_TAG:-latest}
+    ports:
+      - "127.0.0.1:8103:8000"
+  customer-notification:
+    image: logistics-customer-notification:${CUSTOMER_NOTIFICATION_TAG:-latest}
+    ports:
+      - "127.0.0.1:8104:8000"
